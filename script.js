@@ -50,7 +50,13 @@ function game() {
     console.log(`Your score: ${playerScore}. Computer's score: ${computerScore}.`);
   }
 
-  
+  if (playerScore > computerScore) {
+    console.log(`You won the match! The scores are ${playerScore} to ${computerScore}.`);
+  } else if (playerScore < computerScore) {
+    console.log(`You lost the match! The scores are ${computerScore} to ${playerScore}.`);
+  } else {
+    console.log(`The match was a tie. The scores are ${playerScore} to ${computerScore}.`);
+  }
 }
 
 game();
