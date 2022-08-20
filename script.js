@@ -45,14 +45,14 @@ function game() {
     let playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase();
     let computerSelection = getComputerChoice();
 
-    console.log(`ROUND ${i} OF 5`);
+    console.log(`--- ROUND ${i} OF 5 ---`);
     console.log(`The computer picked ${computerSelection}.`);
     console.log(playRound(playerSelection, computerSelection));
     console.log(`Your score: ${playerScore}. Computer's score: ${computerScore}.`);
   }
 
   if (playerScore > computerScore) {
-    console.log(`You won the match! The scores are ${playerScore} to ${computerScore}.`);
+    console.log(`You won the match! FINAL SCORES are ${playerScore} to ${computerScore}.`);
   } else if (playerScore < computerScore) {
     console.log(`You lost the match! The scores are ${computerScore} to ${playerScore}.`);
   } else {
