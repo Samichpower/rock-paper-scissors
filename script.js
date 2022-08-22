@@ -40,10 +40,35 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+function doHardMode(playerSelection) {
+  if (playerSelection === "rock") {
+    return "paper";
+  } else if (playerSelection === "paper") {
+    return "scissors";
+  } else if (playerSelection === "scissors") {
+    return "rock";
+  } else {
+    return getComputerChoice();
+  }
+}
+
 function game() {
+  let hardMode = prompt("Do you want to play on Hard Mode?").toLowerCase();
+  if (hardMode === "yes") {
+    hardMode = true;
+  } else {
+    hardMode = false;
+  }
+
   for (let i = 1; i < 6; i++) {
     let playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase();
-    let computerSelection = getComputerChoice();
+    let computerSelection;
+
+    if (hardMode) {
+      computerSelection = doHardMode(playerSelection);
+    } else {
+      computerSelection = getComputerChoice();
+    }
 
     console.log(`--- ROUND ${i} OF 5 ---`);
     console.log(`The computer picked ${computerSelection}.`);
